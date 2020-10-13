@@ -1,6 +1,6 @@
-====================================
-=  README for ex12: Four In A Row  =
-====================================
+================================
+=  README for "Four In A Row"  =
+================================
 
 A Tkinter based GUI implementation of the famous 'Four In A Row' game.
 Game is played by running two instances of 'four_in_a_row.py' (either on the same machine or on two machines on the
