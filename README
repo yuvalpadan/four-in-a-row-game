@@ -1,0 +1,53 @@
+Author 1:
+ran.inbar
+313542409
+Ran Inbar
+
+Author 2:
+yuvalpadan
+313580912
+Yuval Padan
+
+We used open-source information in ordrer to learn about Tkinter library
+and maximize the game graphics:
+https://docs.python.org/2/library/tkinter.html
+https://www.tutorialspoint.com/python/python_gui_programming.htm
+
+====================================
+=  README for ex12: Final Project  =
+====================================
+
+===============================================================
+Description: This exercise implements the "Four In A Row" game,
+using Tkinter library.
+===============================================================
+
+Files included in this exercise:
+
+1. board:
+   In this file we defined a Board class. Every object from this class
+   represents the board of "four in a row" game.
+
+2. game:
+   In this file we defined a Game class. Every object from this class
+   represents a game of "four in a row".
+
+3. four_in_a_row:
+   In this file we defined a FourInARow class. Every object from this class
+   represents a game of "four in a row" with graphics using Tkinter library.
+
+4. communicator:
+   In this file the Communicator class is defined. Using the socket library,
+   this object allows playing the game with two players that are on the same
+   network. The players communicate through messages that are interperated
+   to actions.
+
+5. ai:
+   In this file we defined an AI class. Every object from this class
+   represents an ai player of "four in a row" game.
+
+6. images:
+   This file contains all the images required to initialize FourInARow object.
+
+special comments:
+The drawn characters are the authors of the game :)
