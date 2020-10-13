@@ -1,53 +1,50 @@
-Author 1:
-ran.inbar
-313542409
-Ran Inbar
-
-Author 2:
-yuvalpadan
-313580912
-Yuval Padan
-
-We used open-source information in ordrer to learn about Tkinter library
-and maximize the game graphics:
-https://docs.python.org/2/library/tkinter.html
-https://www.tutorialspoint.com/python/python_gui_programming.htm
-
 ====================================
-=  README for ex12: Final Project  =
+=  README for ex12: Four In A Row  =
 ====================================
 
-===============================================================
-Description: This exercise implements the "Four In A Row" game,
-using Tkinter library.
-===============================================================
+A Tkinter based GUI implementation of the famous 'Four In A Row' game.
+Game is played by running two instances of 'four_in_a_row.py' (either on the same machine or on two machines on the
+same network). Instances are run from command line by calling:
 
-Files included in this exercise:
+python3 four_in_a_row.py <player> <port> <ip>
 
-1. board:
-   In this file we defined a Board class. Every object from this class
-   represents the board of "four in a row" game.
+<player> is either 'human' or 'ai' and configures game mode to be manual or automatic.
+<port> is the port to communicate through (maximum 65535, recommended around 8000)
+<ip> is the ip address of the machine running the instance to connect to (first instance is created with no ip
+argument given, and the second connects to it).
 
-2. game:
-   In this file we defined a Game class. Every object from this class
-   represents a game of "four in a row".
+============
+=  Files:  =
+============
 
-3. four_in_a_row:
-   In this file we defined a FourInARow class. Every object from this class
-   represents a game of "four in a row" with graphics using Tkinter library.
+1. four_in_a_row.py
+2. game.py
+3. screen.py
+4. communicator.py
+5. folder: images (contains images for GUI)
 
-4. communicator:
-   In this file the Communicator class is defined. Using the socket library,
-   this object allows playing the game with two players that are on the same
-   network. The players communicate through messages that are interperated
-   to actions.
+==============
+=  Classes:  =
+==============
 
-5. ai:
-   In this file we defined an AI class. Every object from this class
-   represents an ai player of "four in a row" game.
+Implementation includes the following classes:
 
-6. images:
-   This file contains all the images required to initialize FourInARow object.
+- FourInARow:       The high level application object, handling game events, turn order and legality, communication
+                    between instances and controlling the objects that manage GUI, gameplay and AI.
+                    four_in_a_row.py includes the main function for getting arguments from command line and initiating
+                    the game instance.
 
-special comments:
-The drawn characters are the authors of the game :)
+- Game:             The object representing the game board, handling current game state, making moves on the board and
+                    checking for game end conditions.
+
+- Screen:           GUI object using Tkinter library. Handles the graphical display of the game, updating moves,
+                    human user input, displaying messages for invalid moves and the result at game end.
+                    Assumes a local folder named 'gui' with game element images, Tkinter and PIL libraries.
+
+- Communicator:     Object handling the non-blocking communication between game instances, initiating and connecting,
+                    sending and receiving messages. (Implemented by the wonderful HUJI CS crew)
+
+- AI:               AI object is responsible for deciding on game moves when game instance is defined to be AI.
+                    A move is done by AI when the method find_legal_move(game, function) is called, given a Game
+                    object and a function to be called with the move chosen by the algorithm.
+                    Also implemented in ai.py is a simple class for Node objects (as AI utilises a search tree).
